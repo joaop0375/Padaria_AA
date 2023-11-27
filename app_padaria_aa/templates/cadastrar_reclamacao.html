@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Cadastrar Reclamação</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <!-- Adicione o campo de nome do cliente selecionado -->
+        {% if form.instance.cliente %}
+            <p>Nome do Cliente Selecionado: {{ form.instance.cliente.nome }}</p>
+        {% endif %}
+
+        <button type="submit">Cadastrar Reclamação</button>
+    </form>
+{% endblock %} 

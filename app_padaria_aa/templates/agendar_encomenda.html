@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <h2>Agendar Encomenda</h2>
+  <form method="post" action="{% url 'agendar_encomenda' %}">
+    {% csrf_token %}
+    
+    {{ form.cliente.label_tag }} {{ form.cliente }}
+    {{ form.produto.label_tag }} {{ form.produto }}
+    {{ form.quantidade.label_tag }} {{ form.quantidade }}
+    
+    <button type="submit">Agendar</button>
+  </form>
+{% endblock %}

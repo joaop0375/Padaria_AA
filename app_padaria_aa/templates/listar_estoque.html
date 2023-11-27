@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <h2>Administração de Estoque</h2>
+  <ul>
+    {% for item in estoque %}
+      <li>{{ item.produto }} - Quantidade: {{ item.quantidade }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

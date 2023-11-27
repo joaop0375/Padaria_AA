@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <h2>Lista de Encomendas</h2>
+  <ul>
+    {% for encomenda in encomendas %}
+      <li>{{ encomenda.cliente.nome }} - Data de Entrega: {{ encomenda.data_entrega }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

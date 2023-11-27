@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <h2>Cadastrar Pedido</h2>
+  <form method="post" action="{% url 'cadastrar_pedido' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cadastrar</button>
+  </form>
+{% endblock %}
